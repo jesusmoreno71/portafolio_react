@@ -59,3 +59,9 @@
         font-size: 14px;
     }
 }
+
+@media screen and (max-width: 369px) {
+    .footer .encabezado .subtitulo {
+        text-align: center;
+    }
+}
