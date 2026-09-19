@@ -1,0 +1,128 @@
+.trabajos {
+    .filtros {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        label {
+            display: flex;
+        }
+
+        .opcion {
+            padding: 10px 20px;
+            border-radius: 100px;
+            cursor: pointer;
+            border: 1px solid var(--shade-3);
+            color: var(--shade-6);
+
+            .dark & {
+                color: var(--shade-4);
+                border: 1px solid var(--shade-7);
+            }
+        }
+        /* Ocultamos los input de tipo radio */
+        input[type='radio'] {
+            display: none;
+            /*Cuando el input este en modo checked accedemos al hermano con las clase de opcion*/
+            &:checked + .opcion {
+                background: var(--primario);
+                color: #fff;
+                border: 1px solid transparent;
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            & {
+                gap: 10px;
+            }
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px 20px;
+
+        @media screen and (max-width: 768px) {
+            & {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            & {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .trabajo {
+            .thumb {
+                /*Nos aseguramos que el contenedor abarque el 100% del espacio disponible de una celda*/
+                width: 100%;
+                display: inline-block;
+                border-radius: 5px;
+                /*Con overflow: hidden ocultamos el contenido fuera del contenedor para que muestre los bordes*/
+                overflow: hidden;
+                /*Damos un espaciado entre la imagen y la informacion*/
+                margin-bottom: 10px;
+
+                img {
+                    /*Limitamos que la imagen tenga el ancho de 100% del contenedor thumb*/
+                    width: 100%;
+                    /*Eliminamos un pequeño margen que agrega el navegador*/
+                    vertical-align: top;
+                    transform: scale(110%);
+                    /*Aplicamos una transicion al zoom out*/
+                    transition: 0.5s ease all;
+                }
+            }
+            /*Efecto zoom out con el estado hover sobre el trabajo y accede a la imagen y le cambia el tamaño al 100%*/
+            &:hover img {
+                transform: scale(100%);
+            }
+
+            .info {
+                display: flex;
+                gap: 10px;
+                /*Movemos el texto a la izquierda y el boton a la derecha*/
+                justify-content: space-between;
+                /*Acomodamos el boton arriba a la derecha*/
+                align-items: flex-start;
+
+                .nombre {
+                    display: inline-block;
+                    color: var(--shade-10);
+                    font-size: 16px;
+                    font-weight: 600;
+                    margin-bottom: 5px;
+
+                    .dark & {
+                        color: var(--shade-1);
+                    }
+                }
+
+                .categoria {
+                    font-size: 14px;
+                    color: var(--shade-6);
+                }
+
+                .btn-ir {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    width: 30px;
+                    height: 30px;
+
+                    svg {
+                        width: 100%;
+                        color: var(--primario);
+                        transition: 0.3s ease all;
+                    }
+                }
+            }
+        }
+    }
+}

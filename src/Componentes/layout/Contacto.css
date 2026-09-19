@@ -1,0 +1,93 @@
+.contacto {
+    .formulario {
+        width: 70%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+        .grupo-formulario {
+            /*con flex y flex-direction:column podemos colocar el input debajo del label
+              y con un espaciado de 5px entre ellos*/
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            &.mensaje {
+                /*Al que tenga la clase mensaje va a ocupar 2 columnas de la grid*/
+                grid-column: span 2;
+            }
+
+            &.error {
+                grid-column: span 2;
+                background: var(--primario);
+                color: #fff;
+                padding: 16px;
+                border-radius: 5px;
+                font-weight: 500;
+            }
+
+            &.enviar {
+                /*Centramos el boton de forma horizontal y vertical*/
+                grid-column: span 2;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            label {
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            input, textarea {
+                width: 100%;
+                padding: 15px;
+                border-radius: 5px;
+                border: none;
+                font-size: 16px;
+                font-family: 'Inter', sans-serif;
+            }
+
+            input:hover, 
+            input:focus, 
+            textarea:hover, 
+            textarea:focus {
+                outline: 2px solid var(--primario);
+            }
+
+            textarea {
+                /*Limitamos el resize del textarea*/
+                resize: vertical;
+                min-height: 80px;
+                max-height: 200px;
+            }
+
+            .dark & input,
+            .dark & textarea {
+                background: var(--shade-10);
+                color: var(--shade-1);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            & {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            & {
+                grid-template-columns: 1fr;
+
+                .grupo-formulario {
+                    /*Hacemos que los elementos tengan una sola columna*/
+                    &.mensaje,
+                    &.error,
+                    &.enviar {
+                        grid-column: span 1;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,129 @@
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    /*Colocamos position: fixed para que el overley se quede pegado en la ventana*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .modal {
+        /*Le damos un ancho de 90% un ancho maximo de 1200px para centrar correctamente los elementos*/
+        width: 90%;
+        max-width: 1200px;
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        .boton-cerrar {
+            /*Acomodamos el boton arriba a la derecha tomando las cordenadas del modal
+              gracias al position: relative del modal y el position: absolute del boton-cerrar;
+              y lo colocamos un poco mas arriba a la derecha modificando el top y right
+            */
+            position: absolute;
+            right: -25px;
+            top: -25px;
+            width: 25px;
+            height: 25px;
+            /*Alineamos el icono dentro del boton al centro*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+
+            svg { 
+                /*Hacemos un poco mas grande el svg respecto al ancho y alto del contenedor*/
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+
+            .thumb {
+                img {
+                    width: 100%;
+                    vertical-align: top;
+                    border-radius: 10px;
+                }
+            }
+
+            .info {
+                display: grid;
+                grid-template-rows: auto 1fr;
+                max-height: 90vh;
+                gap: 20px;
+
+                .head {
+                    background: #fff;
+                    border-radius: 10px;
+                    padding: 20px;
+
+                    .titulo {
+                        margin-bottom: 10px;
+                        color: var(--shade-10);
+
+                        .dark & {
+                            color: var(--shade-1);
+                        }
+                    }
+
+                    .categoria {
+                        color: var(--shade-4);
+                    }
+
+                    .dark & {
+                        background: var(--shade-9);
+                    }
+                }
+
+                .body {
+                    background: #fff;
+                    padding: 20px;
+                    border-radius: 10px;
+                    /*Colocamos overflow:auto para que el contenido cuando sobra aparezca con un scroll*/
+                    overflow: auto;
+                    color: var(--shade-8);
+                    /*Colocamos un interlineado de 30px*/
+                    line-height: 30px;
+
+                    .dark & {
+                        background: var(--shade-9);
+                        color: var(--shade-4);
+                    }
+
+                    p {
+                        margin-bottom: 20px;
+                    }
+
+                    img {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            & {
+                width: 80vw;
+                max-width: 400px;
+                overflow: scroll;
+
+                .grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+    }
+}
