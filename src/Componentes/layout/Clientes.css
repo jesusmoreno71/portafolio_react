@@ -19,7 +19,7 @@
     }
 }
 
-@media screen and (max-width: 369px) {
+@media screen and (max-width: 480px) {
     .clientes .encabezado .subtitulo {
         text-align: center;
     }

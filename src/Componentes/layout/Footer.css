@@ -60,7 +60,7 @@
     }
 }
 
-@media screen and (max-width: 369px) {
+@media screen and (max-width: 480px) {
     .footer .encabezado .subtitulo {
         text-align: center;
     }
