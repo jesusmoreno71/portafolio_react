@@ -1,16 +1,41 @@
-# React + Vite
+# Frontend Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A dynamic, interactive portfolio application designed to showcase custom web design solutions, client collaborations, and featured frontend projects. Built with **React** and **Vite**, and deployed on **Vercel**.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Explore the live project here: [https://portafolio-react-psi.vercel.app/](https://portafolio-react-psi.vercel.app/)
 
-## React Compiler
+## ✨ Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Hero Section:** High-impact intro highlighting core services and call-to-action triggers.
+- **Client & Work Showcase:** Interactive galleries displaying featured projects and client collaborations.
+- **Dynamic Content Filtering:** Built-in category selection to filter projects cleanly in real time.
+- **About Me Section:** Background overview detailing skill sets, technical stack, and workflow.
+- **Contact Form & Social Links:** Custom form validation paired with direct links to active social media profiles.
+- **Responsive & Fast:** Optimized component structure delivering fast build times via Vite and seamless multi-device compatibility.
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Framework / Library:** React.js
+- **Build Tool:** Vite
+- **Styling:** CSS3 (Flexbox & Grid Layouts)
+- **Deployment:** Vercel
+
+## ⚙️ Development & Local Setup
+
+To run this project locally:
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/jesusmoreno71/portafolio_react.git](https://github.com/jesusmoreno71/portafolio_react.git)```
+
+2.Install dependencies:
+  npm install
+
+3.Start the development server:
+  npm run dev
+
+
+## 📌 Project Purpose
+Created to demonstrate modular React architecture, state management for UI filtering, clean CSS layouts, and modern deployment pipelines using Vercel.
